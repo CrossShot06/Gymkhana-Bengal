@@ -99,7 +99,6 @@ export default function GymkhanaPage() {
         "Final year Computer Science student with extensive student leadership experience. Led successful campaigns for better hostel facilities, improved campus Wi-Fi, and extended library hours. Former head of the Technical Society with a track record of organizing major tech fests and hackathons.",
       achievements: ["Tech Fest Organizer", "Hostel Welfare Champion", "Digital Innovation Leader"],
       color: "from-yellow-500 to-amber-600",
-      keyPolicies: ["Better Campus Facilities", "Student Welfare", "Tech Innovation"],
       featured: true,
     },
     {
@@ -201,8 +200,10 @@ export default function GymkhanaPage() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <ParticleBackground />
-      <FloatingElements />
+      <div className="pointer-events-none">
+        <ParticleBackground />
+        <FloatingElements />
+      </div>
 
       {/* Header */}
       <header
@@ -284,7 +285,7 @@ export default function GymkhanaPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Hero3D />
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -381,7 +382,7 @@ export default function GymkhanaPage() {
           <div className="text-center mb-16 animate-in fade-in duration-1000">
             <div className="inline-flex items-center gap-3 mb-6">
               <Trophy className="w-8 h-8 text-yellow-400 animate-bounce" />
-              <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-500">
+              <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent mb-4 hover:scale-105 transition-transform duration-500">
                 Student Leaders
               </h2>
             </div>

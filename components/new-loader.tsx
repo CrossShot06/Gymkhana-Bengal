@@ -1,7 +1,8 @@
 "use client"
+
 import { useEffect, useState } from "react"
 
-export function Loader({ onFinish }: { onFinish?: () => void }) {
+export default function NewLoader({ onFinish }: { onFinish: () => void }) {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
@@ -9,24 +10,14 @@ export function Loader({ onFinish }: { onFinish?: () => void }) {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval)
+          onFinish()
           return 100
         }
         return prev + 1
       })
     }, 30)
-
     return () => clearInterval(interval)
-  }, [])
-
-  useEffect(() => {
-    if (progress >= 100 && onFinish) {
-      // Use setTimeout to defer the callback execution to avoid state update during render
-      const timer = setTimeout(() => {
-        onFinish()
-      }, 100)
-      return () => clearTimeout(timer)
-    }
-  }, [progress, onFinish])
+  }, [onFinish])
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white">
@@ -40,7 +31,7 @@ export function Loader({ onFinish }: { onFinish?: () => void }) {
               style={{
                 left: `${i * 13.3}px`,
                 animationDelay: `${i * 0.1}s`,
-                backgroundColor: i === 2 ? "#fbbf24" : "#1f1f1f",
+                backgroundColor: i === 2 ? "#FF4500" : "#1f1f1f",
                 transform: `translateZ(0px) rotateY(0deg)`,
                 border: "1px solid #333",
               }}

@@ -215,6 +215,20 @@
   }
 }
 
+/* 3D Cube Loader Animation */
+@keyframes rotate-slice {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-rotate-slice {
+  animation: rotate-slice 2s linear infinite;
+}
+
 /* Added running text animations for scrolling text elements */
 @keyframes scroll-left {
   0% {
