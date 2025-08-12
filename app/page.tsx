@@ -207,29 +207,29 @@ export default function GymkhanaPage() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-3">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="flex items-center space-x-2 sm:space-x-3">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q0HE3nOScaGXI7LqUBCYH8K6cxFSQu.png"
                   alt="NIT Durgapur"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-300"
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform duration-300"
                 />
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-y18oe7768P4MmudObrbaiXTlz4aXpl.png"
                   alt="Students' Gymkhana"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-300"
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
                   Students' Gymkhana
                 </h1>
-                <p className="text-sm text-gray-400 -mt-1">NIT Durgapur</p>
+                <p className="text-xs sm:text-sm text-gray-400 -mt-1">NIT Durgapur</p>
               </div>
             </div>
 
@@ -250,22 +250,22 @@ export default function GymkhanaPage() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-yellow-500/20 hover:bg-yellow-500/30 transition-all duration-300 hover:scale-110 hover:rotate-180"
+              className="md:hidden p-2 rounded-lg bg-yellow-500/20 hover:bg-yellow-500/30 transition-all duration-300"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-yellow-500/20 animate-in slide-in-from-top duration-300">
+            <div className="md:hidden py-4 border-t border-yellow-500/20">
               <nav className="flex flex-col space-y-2">
                 {["Manifesto", "Candidates", "Contact"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium py-2 px-4 rounded-lg hover:bg-yellow-500/10 hover:scale-105"
+                    className="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium py-2 px-4 rounded-lg hover:bg-yellow-500/10"
                   >
                     {item}
                   </a>
@@ -277,29 +277,29 @@ export default function GymkhanaPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden z-10">
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8 animate-in fade-in duration-1000">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden z-10 px-4">
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <div className="space-y-6 sm:space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent leading-tight hover:scale-105 transition-transform duration-500">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent leading-tight">
                 Students' Gymkhana Elections 2025
               </h1>
-              <p className="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed animate-in slide-in-from-bottom duration-1000 delay-300">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
                 Shape the future of NIT Durgapur with your vote. Meet the candidates who will lead our student
                 community.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in slide-in-from-bottom duration-1000 delay-500">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black font-bold px-8 py-4 rounded-full shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                className="w-full sm:w-auto bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300"
               >
                 <a href="#candidates">Meet the Candidates</a>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10 px-8 py-4 rounded-full transition-all duration-300 hover:scale-110 hover:-translate-y-1 bg-transparent"
+                className="w-full sm:w-auto border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10 px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 bg-transparent"
               >
                 <a href="#manifesto">Read Manifesto</a>
               </Button>
