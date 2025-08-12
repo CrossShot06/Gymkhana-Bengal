@@ -1,16 +1,12 @@
 "use client"
 
 import type React from "react"
-
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, Heart, Zap, GraduationCap, Coffee, Music, Trophy, Menu, X } from "lucide-react"
-import { Hero3D } from "./components/hero-3d"
-import { FloatingElements } from "./components/floating-elements"
-import { ParticleBackground } from "./components/particle-background"
 import { Loader } from "./components/loader"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { StarryBackground } from "@/components/ui/starry-background"
 
 export default function GymkhanaPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -199,11 +195,8 @@ export default function GymkhanaPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <div className="pointer-events-none">
-        <ParticleBackground />
-        <FloatingElements />
-      </div>
+    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+      <StarryBackground />
 
       {/* Header */}
       <header
@@ -284,10 +277,7 @@ export default function GymkhanaPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Hero3D />
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden z-10">
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8 animate-in fade-in duration-1000">
             <div className="space-y-4">
@@ -341,26 +331,23 @@ export default function GymkhanaPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {manifestoPoints.map((point, index) => (
-              <Card
+              <div
                 key={index}
-                className="accenture-card group hover:border-yellow-500/50 transition-all duration-500 hover:scale-105 hover:-translate-y-2 animate-in slide-in-from-bottom duration-1000"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8 hover:border-yellow-500/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-yellow-500/10"
               >
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-2xl flex items-center justify-center text-yellow-400 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-2xl flex items-center justify-center text-yellow-400 hover:scale-110 hover:rotate-12 transition-all duration-300">
                     {point.icon}
                   </div>
-                  <CardTitle className="text-xl font-bold text-white group-hover:text-yellow-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white hover:text-yellow-300 transition-colors duration-300">
                     {point.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <CardDescription className="text-gray-300 mb-4 leading-relaxed">{point.description}</CardDescription>
-                  <div className="p-3 bg-yellow-500/10 rounded-lg border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors duration-300">
+                  </h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{point.description}</p>
+                  <div className="p-3 bg-yellow-500/10 rounded-lg border border-yellow-500/20 hover:bg-yellow-500/20 transition-colors duration-300">
                     <p className="text-sm text-yellow-200 font-medium">{point.details}</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
 
